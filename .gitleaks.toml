@@ -1,0 +1,8 @@
+# Microsoft's public list of malicious extension ids (bundled in the snapshot and the CLI)
+# contains ids that look like API keys to the generic-api-key rule. Source files are still scanned.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Public extension ids from Microsoft's lists"
+paths = ['''data/lists-snapshot\.json''', '''dist/cli/vsxguard\.mjs''']

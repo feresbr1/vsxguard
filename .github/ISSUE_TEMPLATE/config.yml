@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a security vulnerability in vsxguard
+    url: https://github.com/feresbr1/vsxguard/security/advisories/new
+    about: Please report vulnerabilities privately.
+  - name: Report a malicious extension
+    url: https://github.com/eclipse/openvsx/issues
+    about: Use "Report Abuse" on the VS Code Marketplace page, or the Open VSX tracker.

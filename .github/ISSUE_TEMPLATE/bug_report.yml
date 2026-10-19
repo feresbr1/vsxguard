@@ -1,0 +1,36 @@
+name: Bug report
+description: Something is wrong, for example an editor or extension that is missed or flagged incorrectly.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what did lockspect show instead?
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where
+      options:
+        - Website
+        - CLI
+        - npm run demo
+    validations:
+      required: true
+  - type: input
+    id: manager
+    attributes:
+      label: Editor and version
+      placeholder: Cursor 2.4.1
+  - type: textarea
+    id: lockfile
+    attributes:
+      label: vsxguard output
+      description: Output of `vsxguard --all --no-color` (remove anything private).
+      render: text
+  - type: input
+    id: env
+    attributes:
+      label: Browser or Node.js version

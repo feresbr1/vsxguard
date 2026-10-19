@@ -1,0 +1,73 @@
+{
+  "name": "vsxguard",
+  "version": "1.0.0",
+  "description": "Check the extensions installed in VS Code, Cursor, Windsurf, VSCodium and other editors against Microsoft's lists of removed and malicious extensions, and find hidden GlassWorm-style payloads.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Feres Ben Brahim",
+  "homepage": "https://feresbr1.github.io/vsxguard/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feresbr1/vsxguard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/feresbr1/vsxguard/issues"
+  },
+  "keywords": [
+    "vscode",
+    "vscode-extensions",
+    "cursor",
+    "windsurf",
+    "vscodium",
+    "open-vsx",
+    "malware",
+    "glassworm",
+    "supply-chain-security",
+    "security-audit"
+  ],
+  "bin": {
+    "vsxguard": "dist/cli/vsxguard.mjs"
+  },
+  "files": [
+    "dist/cli",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:web && npm run build:cli",
+    "build:web": "vite build",
+    "build:cli": "node scripts/build-cli.mjs",
+    "preview": "vite preview --port 4174 --strictPort",
+    "update-data": "node scripts/update-data.mjs",
+    "deploy": "node scripts/deploy-pages.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run test && npm run build",
+    "demo": "node scripts/demo.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
+    "@playwright/test": "^1.64.1",
+    "@preact/preset-vite": "^2.10.6",
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "preact": "^10.29.8",
+    "prettier": "^3.6.0",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.71.2",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5"
+  }
+}
